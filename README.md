@@ -1,5 +1,5 @@
 <h1>Flexbox Pricing Table</h1>
-<p>Practicing with flexbox, also started experimenting with JavaScript in this mockup production studio company website.</p>
+<p>Practicing with flexbox and responsiveness, also started experimenting with JavaScript in this mockup production studio company website.</p>
 <a href="https://marisavertz.github.io/Flexbox_Pricing_Table/">
   <img src="https://raw.githubusercontent.com/MarisaVertz/Flexbox_Pricing_Table/refs/heads/main/pricing-table-screenshot.png" width="500">
 </a>
