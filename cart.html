@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Cart - Studio Packages</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<div class="page-wrapper">
+<body class="cart-page">
+  <div class="top-sticky">
+    <nav>
+      <div class="nav-container">
+        <div class="nav-heading"><img class="logonew" src="logo-new.png">MariSound</div>
+        <div class="nav-links">
+          <a href="home.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="index.html">Packages</a>
+          <a href="contact.html">Contact</a>
+          <a href="cart.html" class="active">Cart</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <main>
+    <header class="hero-header">
+      <h1>Your Cart</h1>
+      <p>Review your selected packages and get ready to record!</p>
+    </header>
+    <div class="main-container">
+      <section>
+        <h2>Selected Plans</h2>
+        <div id="cart-details">
+          <p id="empty-cart-msg">Your cart is currently empty.</p>
+          <div id="selected-plan-container"></div>
+        </div>
+        <div class="cart-actions">
+          <button id="clear-cart-btn">Clear Cart</button>
+          <button id="checkout-btn">Proceed to Checkout</button>
+        </div>
+      </section>
+    </div>
+  </main>
+</div>
+  <footer>
+    <p>&copy; 2025 MariSound. All rights reserved.</p>
+  </footer>
+</body>
+<script>
+  const container = document.getElementById('selected-plan-container');
+  const emptyMsg = document.getElementById('empty-cart-msg');
+  const cartHTML = localStorage.getItem('cartHTML');
+  const clearBtn = document.getElementById('clear-cart-btn');
+  const checkoutBtn = document.getElementById('checkout-btn');
+
+  if (cartHTML) {
+    emptyMsg.style.display = 'none';
+    container.innerHTML = cartHTML;
+
+    const selectButton = container.querySelector('.plan-button');
+    if (selectButton) selectButton.style.display = 'none';
+  } else {
+    container.innerHTML = '';
+    clearBtn.style.display = 'none';
+    checkoutBtn.style.display = 'none';
+  }
+
+  clearBtn.onclick = () => {
+    localStorage.removeItem('cartHTML');
+    location.reload();
+  };
+</script>
+</html>
+

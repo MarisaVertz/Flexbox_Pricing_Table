@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flexbox Pricing Table</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Sono:wght@400;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Sono:wght@400;700&family=Barlow+Condensed:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="page-wrapper">
+    <div class="top-sticky">
+      <nav>
+        <div class="nav-container">
+          <div class="nav-heading"><img class="logonew" src="logo-new.png">MariSound</div>
+          <div class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="index.html" class="active">Packages</a>
+            <a href="contact.html">Contact</a>
+            <a href="cart.html">Cart</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <header class="hero-header">
+      <h1>Studio Packages</h1>
+      <p>Pick the perfect plan to mix, master, and make music your way — from home setups to pro production suites.</p>
+    </header>
+    <div class="pricing-container">
+      <div class="pricing-plan">
+        <div class="plan-title">Basic: Solo Artists</div>
+        <div class="plan-price">$9.99/month</div>
+        <ul class="plan-features">
+          <li>✅ 10 Track Projects</li>
+          <li>✅ 5 Sample Packs</li>
+          <li>🚫 Studio Engineer Access</li>
+        </ul>
+        <button class="plan-button" onclick="addToCart(this)">Start Recording</button>
+      </div>
+
+      <div class="pricing-plan">
+        <div class="plan-title">Standard: Band Room</div>
+        <div class="plan-price">$19.99/month</div>
+        <ul class="plan-features">
+          <li>✅ 25 Track Projects</li>
+          <li>✅ 15 Sample Packs</li>
+          <li>✅ Studio Engineer Access</li>
+        </ul>
+        <button class="plan-button" onclick="addToCart(this)">Start Recording</button>
+      </div>
+
+      <div class="pricing-plan">
+        <div class="plan-title">Pro: Full Production</div>
+        <div class="plan-price">$29.99/month</div>
+        <ul class="plan-features">
+          <li>✅ Unlimited Projects</li>
+          <li>✅ 50 Sample Packs</li>
+          <li>✅ Studio Engineer Access</li>
+        </ul>
+        <button class="plan-button" onclick="addToCart(this)">Start Recording</button>
+      </div>
+    </div></div>
+    <footer>
+      <p>&copy; 2025 MariSound. All rights reserved.</p>
+    </footer>
+    <script>
+      function addToCart(button) {
+        const plan = button.closest('.pricing-plan');
+        localStorage.setItem('cartHTML', plan.outerHTML);
+        window.location.href = 'cart.html';
+      }
+    </script>
+  </body>
+</html>
